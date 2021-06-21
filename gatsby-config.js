@@ -8,7 +8,15 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-prettier-build",
+    {
+      resolve: `gatsby-plugin-prettier-build`,
+      options: {
+        // default values
+        types: ['html', 'css', 'js'],
+        concurrency: 20,
+        verbose: true
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
